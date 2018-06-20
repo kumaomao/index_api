@@ -19,4 +19,16 @@ class Banner extends BaseModel
         return $this->hasMany('BannerItem','banner_id','id');
     }
 
+    /**
+     * 根据ID获取Banner
+     * @param $id
+     * @return array|false|\PDOStatement|string|\think\Model
+     */
+    public static function getBannerById($id){
+        $banner = self::with('items,items.img')
+                    ->find($id);
+        return $banner;
+    }
+
+
 }

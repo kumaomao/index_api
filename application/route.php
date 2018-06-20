@@ -13,3 +13,6 @@ use think\Route;
 
 //Navtop
 Route::get('index/:version/navtop','index/:version.navtop/getNavtop');
+
+//Banner
+Route::get('index/:version/banner/:id','index/:version.banner/getBanner');
